@@ -1,26 +1,39 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <TopBar/>
+  <router-view/>
+
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import 'primevue/resources/themes/saga-blue/theme.css';   //theme
+import 'primevue/resources/primevue.min.css';             //core css
+import 'primeicons/primeicons.css';              
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+import TopBar from '@/components/TopBar'
 
-<style>
+  </script>
+<style scope >
+
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family:  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  @apply bg-blue-100
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
